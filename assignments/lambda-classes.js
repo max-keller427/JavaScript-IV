@@ -33,14 +33,14 @@ class Student extends Person{
         this.className = value.className;
         this.favSubjects = value.favSubjects;
     }
-    listsSubjects () {
-        return listsSubjects.call(this.favSubjects);
+    listsSubjects (subject) {
+         return this.subject;
     }
     PRAssignment (subject) {
-        return `${this.name} has submitted a PR for ${subject}`;
+        return `${this.name} has submitted a PR for ${subject}.`;
     }
     sprintChallenge (subject) {
-        return `${this.student} has begun sprint challenge on ${this.subject}.`;
+        return `${this.name} has begun sprint challenge on ${subject}.`;
     }
 }
 
@@ -51,10 +51,10 @@ class ProjectManager extends Instructor {
         this.favInstructor = value.favInstructor;
     }
     standUp (slack) {
-        return `${this.name} has begun spring challenge on ${this.subject}`;
+        return `${this.name} announces to ${slack}, @channel standy times!`;
     }
-    debugsCode (student) {
-        return `${this.name} debugs ${student.name}'s code on ${this.subject}`;
+    debugsCode (student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}`;
     }
 }
 
@@ -86,9 +86,21 @@ const jeffe = new ProjectManager ({
     gradClassName: 'CS1',
     favInstructor: 'Patrick K.',
     })
-
-console.log(jeffe.speak());
+console.log('Lambda-Classes')
+console.log(cam.specialty);
+console.log(cam.favLanguage);
+console.log(cam.catchPhrase);
 console.log(cam.demo());
 console.log(cam.grade(max, "HTML"))
+console.log(max.previousBackground);
+console.log(max.className);
 console.log(max.favSubjects);
+console.log(max.listsSubjects());
+console.log(max.sprintChallenge("JS Fundamentals"));
 console.log(max.PRAssignment('CSS'));
+console.log(jeffe.gradClassName);
+console.log(jeffe.favInstructor);
+console.log(jeffe.standUp('WebPT4'));
+console.log(jeffe.debugsCode(max, 'Javascript'));
+
+
