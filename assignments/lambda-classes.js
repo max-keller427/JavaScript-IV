@@ -34,7 +34,7 @@ class Student extends Person{
         this.favSubjects = value.favSubjects;
     }
     listsSubjects (subject) {
-         return this.subject;
+         return `${subject[0]}, ${subject[1]}, ${subject[2]}.`
     }
     PRAssignment (subject) {
         return `${this.name} has submitted a PR for ${subject}.`;
@@ -95,7 +95,7 @@ console.log(cam.grade(max, "HTML"))
 console.log(max.previousBackground);
 console.log(max.className);
 console.log(max.favSubjects);
-console.log(max.listsSubjects());
+console.log(max.listsSubjects(max.favSubjects));
 console.log(max.sprintChallenge("JS Fundamentals"));
 console.log(max.PRAssignment('CSS'));
 console.log(jeffe.gradClassName);
